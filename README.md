@@ -1,157 +1,75 @@
-# 🌐 Sitio comparativo: HTML vs HTML + CSS
 
-![Docker](https://img.shields.io/badge/Docker-ready-blue?logo=docker)
-![Nginx](https://img.shields.io/badge/Nginx-alpine-green?logo=nginx)
-![HTML5](https://img.shields.io/badge/HTML5-structure-orange?logo=html5)
-![CSS3](https://img.shields.io/badge/CSS3-style-blue?logo=css3)
-![License](https://img.shields.io/badge/license-Academic-lightgrey)
+# Actividad práctica - Capa 7 del Modelo OSI
 
----
+## Descripción del proyecto
 
-## 📘 Descripción
+Este proyecto consiste en el desarrollo de un sitio web académico
+utilizando HTML, con el propósito de aplicar los conocimientos
+relacionados con la capa de aplicación del modelo OSI.
 
-Este proyecto presenta un micrositio académico para la asignatura:
+El sitio presenta información sobre redes de computadores,
+protocolos de comunicación, servicios web y tecnologías
+utilizadas para la publicación de páginas web.
 
-> **INTERNET: Redes y Comunicaciones IP**
+## Integrantes
 
-Su objetivo es demostrar de forma práctica la diferencia entre:
+- Sara Machado
+- Mariana Rondón
 
-- **HTML puro** como base estructural del contenido.
-- **HTML + CSS** como evolución visual de la misma información.
+## Objetivos
 
----
+- Construir un sitio web utilizando HTML.
+- Identificar y aplicar diferentes etiquetas HTML.
+- Comprender el funcionamiento del protocolo HTTP.
+- Reconocer la comunicación entre clientes y servidores.
+- Organizar un proyecto mediante GitHub.
+- Implementar un servidor web utilizando Docker.
 
-## 🎯 Propósito pedagógico
+## Contenido del proyecto
 
-El sitio permite a los estudiantes:
+| Archivo | Descripción |
+|---|---|
+| index.html | Página principal del sitio |
+| daniel.html | Ejemplo de HTML puro |
+| danielcss.html | Ejemplo de HTML con CSS |
+| style.css | Hoja de estilos |
+| integrantes/integrante1.html | Biografía y aportes de Sara Machado |
+| integrantes/integrante2.html | Biografía y aportes de Mariana Rondón |
+| Dockerfile | Configuración del contenedor |
+| docker-compose.yml | Configuración del servicio |
 
-- analizar la **estructura HTML**
-- identificar múltiples **etiquetas en uso real**
-- comparar visualmente el impacto del **CSS**
-- reconocer errores intencionales de codificación en una de las versiones
+## Tecnologías utilizadas
 
----
+- HTML5
+- CSS3
+- HTTP
+- GitHub
+- Docker
+- Nginx
 
-## 🧪 Comparativa incluida
+## Ejecución mediante Docker
 
-| Página | Descripción |
-|------|-------------|
-| `daniel.html` | HTML puro, sin estilos, con una sección que contiene errores intencionales de codificación |
-| `danielcss.html` | Misma temática y mismo contenido esencial, pero con CSS y texto correctamente representado |
+### Requisitos
 
-Se mantiene una comparación directa en el bloque de **Descripción de la asignatura**:
+- Docker Desktop instalado.
+- Docker Compose disponible.
 
-- `daniel.html` → versión con errores visibles tipo `DescripciÃ³n`, `aplicaciÃ³n`, `prÃ¡ctica`
-- `danielcss.html` → versión corregida y visualmente mejor presentada
-
----
-
-## 🖼️ Vista previa
-
-La carpeta incluye una captura de ejemplo para ilustrar la presentación del proyecto en GitHub.  
-Posteriormente puede reemplazarse por una captura real del sitio en ejecución.
-
-![Vista previa del proyecto](docs/demo-placeholder.png)
-
----
-
-## 📁 Estructura del proyecto
-
-```text
-.
-├── index.html
-├── daniel.html
-├── danielcss.html
-├── style.css
-├── img-css/
-├── docs/
-│   └── demo-placeholder.png
-├── Dockerfile
-├── docker-compose.yml
-├── .gitignore
-└── README.md
-```
-
----
-
-## 🐳 Despliegue con Docker
-
-### Construcción
-
-```bash
-docker build -t sitio-html-redes-ip .
-```
-
-### Ejecución
-
-```bash
-docker run -d -p 8001:80 --name sitio-html-redes-ip sitio-html-redes-ip
-```
-
----
-
-## ⚙️ Despliegue con Docker Compose
+### Construir y ejecutar
 
 ```bash
 docker compose up -d --build
 ```
 
----
+### Acceder al sitio
 
-## 🌍 Acceso al sitio
+Abrir en el navegador:
 
-Abrir en navegador:
-
-```text
 http://localhost:8001
-```
 
----
-
-## 🧠 Uso en clase
-
-1. Abrir `daniel.html`
-2. Analizar la estructura y los errores intencionales de codificación
-3. Abrir `danielcss.html`
-4. Comparar presentación, legibilidad y representación correcta de caracteres
-
----
-
-## 📌 Conceptos reforzados
-
-- estructura HTML vs presentación CSS
-- codificación de caracteres y errores de interpretación
-- uso de etiquetas HTML en un sitio académico
-- inspección del código fuente desde el navegador
-- publicación de servicios estáticos mediante contenedores
-
----
-
-## 👨‍🏫 Contexto de uso
-
-Material de apoyo docente para actividades prácticas y demostrativas en cursos relacionados con redes, servicios y tecnologías web.
-
----
-
-## 📜 Licencia
-
-Uso académico y educativo.
-
-
----
-
-## 🚀 Despliegue automatizado recomendado
-
-La forma recomendada de ejecutar este proyecto es usando únicamente Docker Compose.
+### Verificar el contenedor
 
 ```bash
-docker compose up -d --build
-```
-
-El sitio quedará disponible en:
-
-```text
-http://localhost:8001
+docker compose ps
 ```
 
 ### Detener el servicio
@@ -160,28 +78,21 @@ http://localhost:8001
 docker compose down
 ```
 
-### Reconstruir desde cero
+## Funcionamiento
 
-```bash
-docker compose down
-docker compose up -d --build
-```
+El navegador realiza solicitudes HTTP al servidor web Nginx,
+que se ejecuta dentro de un contenedor Docker.
 
-### Validar estado
+El servidor recibe las solicitudes y entrega los archivos
+HTML correspondientes para que el navegador los interprete.
 
-```bash
-docker compose ps
-```
+## Participación
 
-### Ver logs
+Cada integrante desarrolla una sección individual que contiene
+su biografía personal y un resumen de los conocimientos
+adquiridos durante el curso.
 
-```bash
-docker compose logs -f
-```
+## Proyecto académico
 
-## 🧩 Nota importante
-
-No se define `container_name` en `docker-compose.yml`.  
-Esto evita conflictos cuando ya existe un contenedor anterior con el mismo nombre.
-
-Docker Compose administrará automáticamente el nombre del contenedor usando el nombre del proyecto y del servicio.
+Actividad práctica - Capa 7 del Modelo OSI.
+2026.
