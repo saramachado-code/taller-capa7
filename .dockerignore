@@ -1,0 +1,11 @@
+.git
+.gitignore
+README.md
+docs/
+*.zip
+*.tar
+*.gz
+*.log
+Dockerfile
+docker-compose.yml
+.dockerignore
